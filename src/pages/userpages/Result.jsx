@@ -3,6 +3,7 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./css/Result.css";
+const BASE_URL = import.meta.env.VITE_API_URL;
 
 export default function Result() {
   const location = useLocation();
@@ -29,7 +30,7 @@ export default function Result() {
         const formData = new FormData();
         formData.append("file", imageFile);
 
-        const res = await fetch("http://localhost:8000/predict/", {
+        const res = await fetch(`${BASE_URL}/predict/`, {
           method: "POST",
           body: formData,
         });
