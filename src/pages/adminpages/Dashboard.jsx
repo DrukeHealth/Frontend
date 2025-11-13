@@ -1,3 +1,4 @@
+const BASE_URL = import.meta.env.VITE_API_URL;
 import React, { useEffect, useState } from "react";
 import {
   Home,
@@ -51,7 +52,7 @@ export default function Dashboard() {
 
   // Fetch analysis (from FastAPI)
   useEffect(() => {
-    fetch("http://localhost:8000/api/analysis")
+    fetch(`${BASE_URL}/api/analysis`)
       .then((res) => {
         if (!res.ok) throw new Error("Network response was not ok");
         return res.json();
@@ -78,7 +79,7 @@ export default function Dashboard() {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/scans/stats");
+        const res = await axios.get(`${BASE_URL}/api/scans/stats`);
         setScanStats((prev) => ({ ...prev, ...res.data }));
       } catch (err) {
         console.error(err);
