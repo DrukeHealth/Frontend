@@ -14,7 +14,7 @@ export default function CTGScan() {
   const videoRef = useRef(null);
   const navigate = useNavigate();
 
-  const BASE_URL = "https://druk-ehealth-backend.onrender.com"; // Node backend
+  const BASE_URL = "https://druk-ehealth-backend.onrender.com/api"; // Node backend
 
   useEffect(() => {
     document.body.style.backgroundColor = darkMode ? "#121212" : "#FFFFFF";
