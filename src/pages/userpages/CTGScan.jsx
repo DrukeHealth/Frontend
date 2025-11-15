@@ -78,7 +78,7 @@ export default function CTGScan() {
       const formData = new FormData();
       formData.append("ctgImage", imageFile);
 
-      await axios.post(`${BASE_URL}/postCTG`, formData, {
+      await axios.post(`${BASE_URL}/scans/postCTG`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
